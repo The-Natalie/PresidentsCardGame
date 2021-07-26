@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xYw-SH-nzm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards Collection View Controller-->
+        <scene sceneID="sYs-ty-jbM">
+            <objects>
+                <collectionViewController id="HLX-fw-XNS" customClass="CardsCollectionViewController" customModule="PresidentsCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yVH-bH-dta">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="BNP-Do-2KL">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="presidentCell" id="O3l-2S-PdH" customClass="PresidentCollectionViewCell" customModule="PresidentsCardGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="42p-JB-EUo">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M1A-kq-9zp">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="M1A-kq-9zp" secondAttribute="trailing" id="BZ2-b9-tcI"/>
+                                        <constraint firstItem="M1A-kq-9zp" firstAttribute="leading" secondItem="42p-JB-EUo" secondAttribute="leading" id="WS7-1g-WKC"/>
+                                        <constraint firstAttribute="bottom" secondItem="M1A-kq-9zp" secondAttribute="bottom" id="XbM-se-Xif"/>
+                                        <constraint firstItem="M1A-kq-9zp" firstAttribute="top" secondItem="42p-JB-EUo" secondAttribute="top" id="eZY-Uy-Pf8"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="presidentImageView" destination="M1A-kq-9zp" id="a4K-Bs-1aG"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="HLX-fw-XNS" id="GEc-Nf-esx"/>
+                            <outlet property="delegate" destination="HLX-fw-XNS" id="qAQ-Oh-ZfT"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="s1v-WJ-cGw">
+                        <barButtonItem key="rightBarButtonItem" title="Party" id="96e-ec-aJz">
+                            <connections>
+                                <segue destination="xYB-Wr-mOb" kind="presentation" identifier="toFilterVC" id="BjN-eW-vV1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJa-07-8Wk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753.62318840579712" y="50.892857142857139"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="R8n-dC-Ddz">
+            <objects>
+                <viewController id="xYB-Wr-mOb" customClass="FilterViewController" customModule="PresidentsCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iap-L4-CI4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-in-RmO">
+                                <rect key="frame" x="124" y="217.5" width="166" height="373"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-fE-LSx">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="165.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dHx-fE-LSx" secondAttribute="height" multiplier="1:1" id="Zxu-i4-Zdh"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="democrat"/>
+                                        <connections>
+                                            <action selector="democratButtonTapped:" destination="xYB-Wr-mOb" eventType="touchUpInside" id="Q8Q-jn-I5a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32m-IS-pzY">
+                                        <rect key="frame" x="0.0" y="207.5" width="166" height="165.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="32m-IS-pzY" secondAttribute="height" multiplier="1:1" id="eTk-6W-f0v"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="republican"/>
+                                        <connections>
+                                            <action selector="republicanButtonTapped:" destination="xYB-Wr-mOb" eventType="touchUpInside" id="Eeg-JW-Cpu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leu-CE-amQ">
+                                <rect key="frame" x="144.5" y="122" width="125" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="12r-7h-YD0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wLZ-in-RmO" firstAttribute="centerY" secondItem="12r-7h-YD0" secondAttribute="centerY" id="8F0-6l-CRe"/>
+                            <constraint firstItem="wLZ-in-RmO" firstAttribute="top" secondItem="Leu-CE-amQ" secondAttribute="bottom" constant="65.5" id="NZt-vB-bcS"/>
+                            <constraint firstItem="wLZ-in-RmO" firstAttribute="centerX" secondItem="12r-7h-YD0" secondAttribute="centerX" id="dXC-8z-2wW"/>
+                            <constraint firstItem="wLZ-in-RmO" firstAttribute="width" secondItem="Iap-L4-CI4" secondAttribute="width" multiplier="0.4" id="n6C-Mh-S43"/>
+                            <constraint firstItem="Leu-CE-amQ" firstAttribute="centerX" secondItem="12r-7h-YD0" secondAttribute="centerX" id="tzU-Ld-uQc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpR-G4-Oqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="51"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tJJ-Xf-PN4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYw-SH-nzm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FjY-hg-q2s">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HLX-fw-XNS" kind="relationship" relationship="rootViewController" id="xRG-Cl-opL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nE5-8I-oZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7.2463768115942031" y="50.892857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="democrat" width="227" height="222"/>
+        <image name="republican" width="241" height="209"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
